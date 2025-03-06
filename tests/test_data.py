@@ -27,7 +27,7 @@ class TestData:
     
     def test_eliminar_duplicados(self):
         # Test con lista con duplicados
-        assert self.data.eliminar_duplicados([1, 2, 2, 3, 4, 4, 5]) == [1, 2, 3, 4, 5]
+        assert self.data.eliminar_duplicados([1, 2, 2, 3, 4, 4, 5, True]) == [1, 2, 3, 4, 5]
         # Test con lista sin duplicados
         assert self.data.eliminar_duplicados([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
         # Test con lista vacía
