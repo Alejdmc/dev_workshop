@@ -7,7 +7,7 @@ class TestData:
     
     def test_invertir_lista(self):
         # Test con lista de enteros
-        assert self.data.invertir_lista([1, 2, 3, 4, 5]) == [5, 4, 3, 2, 1]
+        assert self.data.invertir_lista([1, 2, 3, 4, 5]) == [5, 4, 3, 2, 1]#ae
         # Test con lista vacía
         assert self.data.invertir_lista([]) == []
         # Test con lista de un elemento
