@@ -13,10 +13,14 @@ class Data:
 
     def eliminar_duplicados(self, lista):
         nueva_lista = []
+        hubo_duplicados = False  # Variable para verificar si hubo duplicados
+
         for elemento in lista:
             if elemento not in nueva_lista:
                 nueva_lista.append(elemento)
-        return nueva_lista
+            else:
+                hubo_duplicados = True  
+        return nueva_lista, hubo_duplicados  
 
     def merge_ordenado(self, lista1, lista2):
         resultado = []
@@ -37,8 +41,11 @@ class Data:
         return resultado
 
     def rotar_lista(self, lista, k):
-        k = k % len(lista)
-        return lista[-k:] + lista[:-k]
+        if not lista:  # Verifica si la lista está vacía
+            return lista
+    
+        k = k % len(lista)  # Evita la división por cero
+        return lista[-k:] + lista[:-k]  # Realiza la rotación
 
     def encuentra_numero_faltante(self, lista):
         n = len(lista) + 1
@@ -78,4 +85,5 @@ class Data:
             for j in range(columnas):
                 transpuesta[j][i] = matriz[i][j]
         return transpuesta
+
         pass
