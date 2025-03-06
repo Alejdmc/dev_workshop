@@ -60,20 +60,23 @@ class Geometria:
         return 2 * math.pi * radio * (radio + altura)
 
     def distancia_entre_puntos(self, x1, y1, x2, y2):
-        return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+        distancia = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+        return round(distancia, 2)
 
     def punto_medio(self, x1, y1, x2, y2):
         return ((x1 + x2) / 2, (y1 + y2) / 2)
 
     def pendiente_recta(self, x1, y1, x2, y2):
-        return (y2 - y1) / (x2 - x1) if x1 != x2 else None
+        if x1 == x2:
+            raise ZeroDivisionError("La pendiente es indefinida (división por cero).")
+        return (y2 - y1) / (x2 - x1)
 
     def ecuacion_recta(self, x1, y1, x2, y2):
-        if x1 == x2:
-            return (1, 0, -x1) 
-        m = self.pendiente_recta(x1, y1, x2, y2)
-        b = y1 - m * x1
-        return (-m, 1, -b)
+        # Calculamos los coeficientes A, B y C de la ecuación Ax + By + C = 0
+        A = y2 - y1
+        B = -(x2 - x1)
+        C = -(A * x1 + B * y1)
+        return (A, B, C)
     def area_poligono_regular(self, num_lados, lado, apotema):
         return (num_lados * lado * apotema) / 2
 
