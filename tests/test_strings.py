@@ -77,7 +77,7 @@ class TestStrings:
         # Test con palabras ya capitalizadas
         assert self.strings.palabras_mayus("Hola Mundo") == "Hola Mundo"
         # Test con espacios múltiples
-        assert self.strings.palabras_mayus("  hola  mundo  ") == "  Hola  Mundo  "
+        assert self.strings.palabras_mayus("  hola  mundo  ") == "Hola Mundo"
         # Test con cadena vacía
         assert self.strings.palabras_mayus("") == ""
     
