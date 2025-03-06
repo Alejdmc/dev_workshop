@@ -78,12 +78,15 @@ class Data:
         }
 
     def matriz_transpuesta(self, matriz):
+        if not matriz or not matriz[0]:  # Verifica si la matriz está vacía o tiene filas vacías
+            return []
         filas = len(matriz)
         columnas = len(matriz[0])
-        transpuesta = [[0] * filas for _ in range(columnas)]
-        for i in range(filas):
-            for j in range(columnas):
-                transpuesta[j][i] = matriz[i][j]
-        return transpuesta
+    # Verificar que todas las filas tienen la misma cantidad de columnas
+        for fila in matriz:
+            if len(fila) != columnas:
+                raise ValueError("Todas las filas deben tener la misma longitud")
+    # Crear la transpuesta
+        return [[matriz[i][j] for i in range(filas)] for j in range(columnas)]
 
-        pass
+    
