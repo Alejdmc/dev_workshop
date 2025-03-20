@@ -13,7 +13,7 @@ class Data:
 
     def eliminar_duplicados(self, lista):
         nueva_lista = []
-        hubo_duplicados = False  # Variable para verificar si hubo duplicados
+        hubo_duplicados = False  
 
         for elemento in lista:
             if elemento not in nueva_lista:
@@ -41,11 +41,11 @@ class Data:
         return resultado
 
     def rotar_lista(self, lista, k):
-        if not lista:  # Verifica si la lista está vacía
+        if not lista:  
             return lista
     
-        k = k % len(lista)  # Evita la división por cero
-        return lista[-k:] + lista[:-k]  # Realiza la rotación
+        k = k % len(lista)  
+        return lista[-k:] + lista[:-k]  
 
     def encuentra_numero_faltante(self, lista):
         n = len(lista) + 1
@@ -78,15 +78,13 @@ class Data:
         }
 
     def matriz_transpuesta(self, matriz):
-        if not matriz or not matriz[0]:  # Verifica si la matriz está vacía o tiene filas vacías
+        if not matriz or not matriz[0]:  
             return []
         filas = len(matriz)
         columnas = len(matriz[0])
-    # Verificar que todas las filas tienen la misma cantidad de columnas
         for fila in matriz:
             if len(fila) != columnas:
                 raise ValueError("Todas las filas deben tener la misma longitud")
-    # Crear la transpuesta
         return [[matriz[i][j] for i in range(filas)] for j in range(columnas)]
 
     

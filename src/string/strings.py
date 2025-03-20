@@ -1,6 +1,6 @@
 class Strings:
     def es_palindromo(self, texto):
-        texto_limpio = ''.join(c.lower() for c in texto if c.isalnum())  # Elimina espacios y signos
+        texto_limpio = ''.join(c.lower() for c in texto if c.isalnum())
         return texto_limpio == texto_limpio[::-1]
     def invertir_cadena(self, texto):
         invertida = ""
