@@ -193,7 +193,7 @@ class TestGeometria:
         # Test con línea horizontal
         assert self.geometria.ecuacion_recta(1, 5, 5, 5) == (0, -4, 20)
     
-    def test_area_poligono_regular(self):
+    def test_area_poligono_regular(self): 
         # Test con triángulo regular
         assert round(self.geometria.area_poligono_regular(3, 10, 2.89), 2) == 43.35
         # Test con cuadrado
