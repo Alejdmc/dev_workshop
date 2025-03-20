@@ -72,7 +72,6 @@ class Geometria:
         return (y2 - y1) / (x2 - x1)
 
     def ecuacion_recta(self, x1, y1, x2, y2):
-        # Calculamos los coeficientes A, B y C de la ecuación Ax + By + C = 0
         A = y2 - y1
         B = -(x2 - x1)
         C = -(A * x1 + B * y1)
