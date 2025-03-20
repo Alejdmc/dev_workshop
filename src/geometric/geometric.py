@@ -68,7 +68,7 @@ class Geometria:
 
     def pendiente_recta(self, x1, y1, x2, y2):
         if x1 == x2:
-            raise ZeroDivisionError("La pendiente es indefinida (división por cero).") #ae
+            raise ZeroDivisionError("La pendiente es indefinida (división por cero).") 
 
     def ecuacion_recta(self, x1, y1, x2, y2):
         A = y2 - y1
